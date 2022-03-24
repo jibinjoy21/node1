@@ -1,6 +1,7 @@
 using {sap.ui.riskmanagement as my} from '../db/schema';
 
 @path : 'service/risk'
+@requires : 'authenticated-user'
 service RiskService {
     entity Risks       as projection on my.Risks;
     annotate Risks with @odata.draft.enabled;
