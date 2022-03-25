@@ -8,8 +8,8 @@
   "dependencies": {
     "@sap/cds": "^5",
     "express": "^4",
-    "passport": "^0.5.2",
-    "hdb": "^0.18.3"
+    "hdb": "^0.18.3",
+    "passport": "^0.5.2"
   },
   "devDependencies": {
     "sqlite3": "^5.0.2"
@@ -48,7 +48,7 @@
     },
     "requires": {
       "db": {
-        "kind": "hana"
+        "kind": "sql"
       }
     },
     "hana": {

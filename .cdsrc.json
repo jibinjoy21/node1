@@ -3,13 +3,21 @@
 		"passport": {
 			"strategy": "mock",
 			"users": {
-				"jibin@maventic.com": {
+				"jibin": {
 					"password": "1234",
-					"ID": "jibin@maventic.com",
+					"ID": "jibin",
 					"roles": [
 						"authenticated-user"
 					]
-				}
+				},
+				"jibin1": {
+					"password": "1234",
+					"ID": "jibin1",
+					"roles": [
+						"authenticated-user2"
+					]
+				},
+				"*": false
 			}
 		}
 	}
