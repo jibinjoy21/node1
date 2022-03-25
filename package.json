@@ -47,8 +47,45 @@
       "target": "."
     },
     "requires": {
-      "db": {
-        "kind": "sql"
+      "[local]": {
+        "db": {
+          "kind": "sql",
+          "credentials": {
+            "database": "sqlite.db"
+          }
+        },
+        "auth": {
+          "kind": "basic-auth",
+          "users": {
+            "jibin": {
+              "password": "1234",
+              "ID": "jibin",
+              "roles": [
+                "RiskManager"
+              ]
+            },
+            "jibin1": {
+              "password": "1234",
+              "ID": "jibin1",
+              "roles": [
+                "RiskViewer"
+              ]
+            },
+            "abcd": {
+              "password": "1234",
+              "ID": "abcd",
+              "roles": [
+                "authenticated-user2"
+              ]
+            },
+            "*": false
+          }
+        }
+      },
+      "[cloud]": {
+        "db": {
+          "kind": "hana"
+        }
       }
     },
     "hana": {
