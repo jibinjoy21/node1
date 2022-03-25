@@ -1,49 +1,49 @@
 {
-  "xsappname": "node1",
-  "tenant-mode": "dedicated",
-  "description": "Security profile of called application",
-  "scopes": [
-    {
-      "name": "uaa.user",
-      "description": "UAA"
-    },
-    {
-      "name": "$XSAPPNAME.RiskViewer",
-      "description": "RiskViewer"
-    },
-    {
-      "name": "$XSAPPNAME.RiskManager",
-      "description": "RiskManager"
+    "xsappname": "node1",
+    "tenant-mode": "dedicated",
+    "description": "Security profile of called application",
+    "scopes": [
+        {
+            "name": "uaa.user",
+            "description": "UAA"
+        },
+        {
+            "name": "$XSAPPNAME.RiskViewer",
+            "description": "RiskViewer"
+        },
+        {
+            "name": "$XSAPPNAME.RiskManager",
+            "description": "RiskManager"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Token_Exchange",
+            "description": "UAA",
+            "scope-references": [
+                "uaa.user"
+            ]
+        },
+        {
+            "name": "RiskViewer",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.RiskViewer"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "RiskManager",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.RiskManager"
+            ],
+            "attribute-references": []
+        }
+    ],
+    "oauth2-configuration": {
+        "redirect-uris": [
+            "https://*.applicationstudio.cloud.sap/**"
+        ]
     }
-  ],
-  "role-templates": [
-    {
-      "name": "Token_Exchange",
-      "description": "UAA",
-      "scope-references": [
-        "uaa.user"
-      ]
-    },
-    {
-      "name": "RiskViewer",
-      "description": "generated",
-      "scope-references": [
-        "$XSAPPNAME.RiskViewer"
-      ],
-      "attribute-references": []
-    },
-    {
-      "name": "RiskManager",
-      "description": "generated",
-      "scope-references": [
-        "$XSAPPNAME.RiskManager"
-      ],
-      "attribute-references": []
-    }
-  ],
-  "oauth2-configuration": {
-    "redirect-uris": [
-      "http://localhost:5001/"
-    ]
-  }
 }
